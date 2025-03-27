@@ -23,5 +23,26 @@ int main() {
         casa_rainha++;
     } while (casa_rainha <= 8);
 
+    // Movimento do Cavalo: 2 casas para baixo e 1 para a esquerda (usando loops ANINHADOS)
+    printf("\nMovimento do Cavalo:\n");
+    
+    const int passos_baixo = 2;   // 2 casas para baixo
+    const int passos_esquerda = 1; // 1 casa para a esquerda
+    
+    // Loop externo (for) para controlar os passos para baixo
+    for (int i = 1; i <= passos_baixo; i++) {
+        printf("Baixo\n"); // Primeira parte do "L" (2 passos para baixo)
+        
+        // Loop interno (while) para controlar o passo para a esquerda
+        // (Só executa na última iteração do loop externo)
+        if (i == passos_baixo) { // Se for o último passo para baixo
+            int j = 1;
+            while (j <= passos_esquerda) {
+                printf("Esquerda\n"); // Segunda parte do "L" (1 passo para a esquerda)
+                j++;
+            }
+        }
+    }
+
     return 0;
 }
